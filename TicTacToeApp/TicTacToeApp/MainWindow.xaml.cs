@@ -24,5 +24,10 @@ namespace TicTacToeApp
         {
             InitializeComponent();
         }
+
+        private void ButtonName_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+            ButtonName.Content = "╳";
+        }
     }
 }

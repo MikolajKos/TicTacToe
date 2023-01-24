@@ -55,7 +55,7 @@
             <Border Style="{StaticResource DefaultBorder}" BorderThickness="0 0 3 0" Grid.RowSpan="3"/>
             <Border Style="{StaticResource DefaultBorder}" BorderThickness="3 0 0 0" Grid.Column="2" Grid.RowSpan="3"/>
 
-            <Button CommandParameter="0" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="0" Grid.Row="0"/>
+            <Button CommandParameter="0" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="0" Grid.Row="0" Cursor="Hand"/>
             <Button CommandParameter="1" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="1" Grid.Row="0"/>
             <Button CommandParameter="2" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="2" Grid.Row="0"/>
             <Button CommandParameter="3" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="0" Grid.Row="1"/>
@@ -63,8 +63,11 @@
             <Button CommandParameter="5" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="2" Grid.Row="1"/>
             <Button CommandParameter="6" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="0" Grid.Row="2"/>
             <Button CommandParameter="7" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="1" Grid.Row="2"/>
-            <Button CommandParameter="8" Command="{Binding PlayerPutsASign}" Style="{StaticResource DefaultButton}" Grid.Column="2" Grid.Row="2"/>
+            <Button Name="ButtonName" ContentElement.GotMouseCapture="ButtonName_GotMouseCapture" CommandParameter="8" Style="{StaticResource DefaultButton}" Grid.Column="2" Grid.Row="2">
+
+            </Button>
         </Grid>
+        
         
     </Grid>
 </Window>

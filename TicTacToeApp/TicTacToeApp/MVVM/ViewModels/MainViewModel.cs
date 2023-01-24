@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using UnitsConverterApp.Core;
@@ -36,7 +37,7 @@ namespace TicTacToeApp.MVVM.ViewModels
                     {
                         var clickedButton = o.ToString();
                         Button bt = new Button();
-                        bt.Content = "ASD";
+                        /*bt.AddToEventRoute(bt, );*/
                     },
                     (object o) => true);
                 return _playerPutsASign;
