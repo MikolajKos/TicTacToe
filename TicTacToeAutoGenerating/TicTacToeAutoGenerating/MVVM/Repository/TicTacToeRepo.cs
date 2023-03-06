@@ -14,10 +14,6 @@ namespace TicTacToeAutoGenerating.MVVM.Repository
     {
         MainModel model = new MainModel();
 
-        public void LoadButtons(int buttonsInRow)
-        {
-        }
-
         public void GetButtonsContent(ObservableCollection<FieldDescription> buttonsList)
         {
             model.buttonsContentList = new List<string>();
@@ -92,6 +88,17 @@ namespace TicTacToeAutoGenerating.MVVM.Repository
             rightCrossButtons.Clear();
 
             return false;
+        }
+
+        public bool IsRemis(ObservableCollection<FieldDescription> buttonsList)
+        {
+            foreach (var item in buttonsList)
+            {
+                if (item.Name == string.Empty || item.Name == null)
+                    return false;
+            }
+            
+            return true;
         }
 
         public bool DoesAnybodyWon(int btnsInRow)

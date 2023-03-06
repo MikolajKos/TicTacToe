@@ -19,6 +19,7 @@ namespace TicTacToeAutoGenerating.MVVM.ViewModels
         //true for "O", false for "X"
         private bool currentPlayer = true;
 
+        //Set board size
         private int _buttonsInRow = 3;
         public int ButtonsInRow
         {
@@ -60,6 +61,7 @@ namespace TicTacToeAutoGenerating.MVVM.ViewModels
         {
             BoardList = new ObservableCollection<FieldDescription>();
 
+            //Generates board
             for (int i = 0; i < (ButtonsInRow * ButtonsInRow); i++)
             {
                 BoardList.Add(new FieldDescription()
@@ -96,13 +98,15 @@ namespace TicTacToeAutoGenerating.MVVM.ViewModels
 
                                 MessageBox.Show($"Player {o.Name} won!");
                                 repo.RestartGame(BoardList);
-                                
-
 
                                 //sets O as default player
                                 currentPlayer = true;
+                                return;
                             }
-                            
+                            else if (repo.IsRemis(BoardList))
+                            {
+                                MessageBox.Show("Remis");
+                            }
                         },
                         o =>
                         {
